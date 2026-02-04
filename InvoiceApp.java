@@ -12,7 +12,7 @@ public class InvoiceApp {
 
         // perform invoice calculations until choice isn't equal to "y" or "Y"
         String choice = "y";
-        while (choice.equalsIgnoreCase("y")) {
+        while (!choice.equalsIgnoreCase("n")) {
             // get the invoice subtotal from the user
             System.out.print("Enter subtotal:   ");
             String input = sc.nextLine();
@@ -20,8 +20,11 @@ public class InvoiceApp {
 
             // calculate the discount amount and total
             double discountPercent;
-            if (subtotal >= 200) {
-                discountPercent = .2;
+            if (subtotal >= 500
+            ) {
+                discountPercent = 0.25;
+            } else if (subtotal >= 200) {
+                discountPercent = 0.2;
             } else if (subtotal >= 100) {
                 discountPercent = .1;
             } else {
